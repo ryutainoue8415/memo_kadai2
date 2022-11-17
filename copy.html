@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>山行記録</title>
+  <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+  <header>
+        <h1>山行記録</h1>
+  </header>
+
+  <main>
+        <input type="text" id="input">
+        <textarea id="text_area"></textarea>
+        <ul>
+          <li id="save">Save</li>
+          <li id="clear">Clear</li>
+        </ul>
+  </main>
+
+  <footer>
+    <small>Copyright (C) inop</small>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+  //データ保存するときの処理 
+    $("#save").on("click", function () {
+      const title1 = $("#input").val();
+      const text = $("#text_area").val();
+      const data = {
+       title:title1,
+       text:text,
+    };
+     const jsonData = JSON.stringify(data);
+      localStorage.setItem("memo", jsonData);
+  });
+
+    //データを削除するときの処理
+    $("#clear").on("click", function () {   //aiueo
+      localStorage.removeItem("memo");
+      $("#text_area").val("");
+    });
+
+    //データを取得するときの処理
+    if (localStorage.getItem("memo")) {
+      const jsonData2 = localStorage.getItem("memo");
+      console.log(jsonData2);
+      const data2 = JSON.parse(jsonData2);
+      console.log(data2);
+      $("#input").val(data2.title)
+      $("#text_area").val(data2.text)
+    }
+
+    // //配列やオブジェクトをJson形式に変換する
+    // const data = {
+    //   title: $("#input").val(),
+    //   text: $("#text_area").val(),
+    // }
+    // const jsonData =json.stringify(data);
+    // localStorage.setItem("memo",jsondata);
+
+
+    //Jsonを配列やオブジェクトに戻す処理
+    // const jsonData2 = localStorage.getItem("memo");
+    // const data2 = JSON.parse(jsondata);
+    
+
+
+
+
+
+  // //データを削除するときの処理
+  // $("#clear").on("click", function () {
+  //   localStorage.removeItem("memo");
+  //   $("#text_area").val("");
+  // });
+
+  // //データを取得するときの処理
+  // if (localStorage.getItem("memo")) {
+  //   const text = localStorage.getItem("memo");
+  //   $("#text_area").val(text);
+  // }
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>山行記録</title>
+  <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+  <header>
+        <h1>山行記録</h1>
+  </header>
+
+  <main>
+       <!-- //入力フォーム -->
+        <div class="input_form"
+              <label>山行年月日<input type="date" id="day">
+        </div> 
+
+        <div class="input_form" 
+              <label>山行スタイル<select name="style" id="style">
+              <option value="style1">縦走</option>
+              <option value="style2">ハイキング</option>
+              <option value="style3">テント泊</option>
+              <option value="style4">ロッククライミング</option>
+              <option value="style5">沢</option>
+              </select>
+        </div>
+
+        <div class="input_form" <label>山名・山域<input type="text" id="name">
+        </div>
+
+        <div class="input_form" <label>目的<input type="text" id="purpose">
+        </div>
+
+        <div class="input_form" <label>集合場所<input type="text" id="meeting plece">
+        </div>
+
+        <div class="input_form" <label>集合時刻<input type="time" id="meeting time">
+        </div>
+
+        <div><p>内容</p>
+            <div class="input_form" <label>区分<select name="division" id="division">
+                    <option value="form1">初心者</option>
+                    <option value="form2">中級者</option>
+                    <option value="form3">上級者</option>
+                    <option value="form4">ロッククライミング経験者</option>
+                    <option value="form5">沢経験者</option>
+                  </select>
+            </div>
+        </div>
+
+            <div class="input_form" <label>体力度<select name="physical_strength" id="physical_strength">
+                <option value="form1">★</option>
+                <option value="form2">★★</option>
+                <option value="form3">★★★</option>
+                <option value="form4">★★★★</option>
+                <option value="form5">★★★★★</option>
+              </select>
+            </div>
+
+            <div class="input_form" <label>難易度<select name="difficulty" id="difficulty">
+                <option value="form1">★</option>
+                <option value="form2">★★</option>
+                <option value="form3">★★★</option>
+                <option value="form4">★★★★</option>
+                <option value="form5">★★★★★</option>
+              </select>
+            </div>
+
+
+            <!-- 標高差をjacascriptを使って配列処理で表示 -->
+            <div class="input_form" <label>標高差<select name="altitude_difference" id="altitude_difference">
+              </select>
+            </div>
+
+
+
+        <ul>
+          <li id="save">Save</li>
+          <li id="clear">Clear</li>
+        </ul>
+  </main>
+
+  <footer>
+    <small>Copyright (C) inop</small>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+    // 標高差入力フォームのselectに対するoptionタグの生成
+            const start = 100 ;           //開始と終了タグの作成
+            const end =2000 ;
+
+            let = options = "";          //タグの文字列を作成
+        
+           //繰り返し処理 for("開始条件";"繰り返しを続ける条件";"回数のカウントの仕方"){
+                           // 実際に繰り返したい処理
+                           //}
+
+            for(let i = start ; i <= end ; i + 100) {    //タグの文字列に順番に追加して繰り返す
+                options += '<option value = "">' + i + '</option>';
+            }
+             console.log(options);
+             
+            // $("#select").html(options);
+        
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
